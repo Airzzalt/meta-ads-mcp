@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: meta-ads-mcp
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: META_ACCESS_TOKEN
+        sync: false
+      - key: MCP_API_KEY
+        sync: false
+      - key: META_API_VERSION
+        value: v25.0
